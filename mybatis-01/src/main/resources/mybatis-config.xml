@@ -30,9 +30,9 @@
     </environments>
 <!--方式-->
     <mappers>
-<!--        <mapper resource="com/zcw/dao/UserMapper.xml"/>-->
+        <mapper resource="com/zcw/dao/UserMapper.xml"/>
 <!--        <mapper class="com.zcw.dao.UserMapper"/>-->
-        <package name="com.zcw.dao"/>
+<!--        <package name="com.zcw.dao"/>-->
     </mappers>
 
 
