@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+<!--引入外部配置文件,优先使用外部配置文件的property-->
+    <properties resource="db.properties">
+        <property name="username" value="root"/>
+        <property name="password" value="123456"/>
+    </properties>
+
+
+<!--别名: 实体类比较少使用typeAlias,可DIY别名,实体类较多使用扫描包,可在注解中修改别名-->
+    <typeAliases>
+<!--        <typeAlias type="com.zcw.pojo.User" alias="User"/>-->
+        <package name="com.zcw.pojo"/>
+    </typeAliases>
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+<!--方式-->
+    <mappers>
+<!--        <mapper resource="com/zcw/dao/UserMapper.xml"/>-->
+<!--        <mapper class="com.zcw.dao.UserMapper"/>-->
+        <package name="com.zcw.dao"/>
+    </mappers>
+
+
+</configuration>
